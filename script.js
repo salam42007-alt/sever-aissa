@@ -8,18 +8,18 @@ let currentCategory = "home";
 // -----------------------------------
 const data = {
   ranks: [
-    {name:"rank1", ext:"jpg", desc:"Elite: +500 بلوكة كليم، سيف سوبر، 300 فلوس", price:"200 دايموند"},
-    {name:"rank2", ext:"jpg", desc:"VIP: +1000 بلوكة كليم، سيف سوبر، 3000 فلوس", price:"300 دايموند"},
-    {name:"rank3", ext:"jpg", desc:"Golding: +2000 بلوكة كليم، سيف سوبر، 5000 فلوس", price:"400 دايموند"}
+    {name:"rank1", url:"ضع_رابط_صورة_rank1_هنا", desc:"Elite: +500 بلوكة كليم، سيف سوبر، 300 فلوس", price:"200 دايموند"},
+    {name:"rank2", url:"ضع_رابط_صورة_rank2_هنا", desc:"VIP: +1000 بلوكة كليم، سيف سوبر، 3000 فلوس", price:"300 دايموند"},
+    {name:"rank3", url:"ضع_رابط_صورة_rank3_هنا", desc:"Golding: +2000 بلوكة كليم، سيف سوبر، 5000 فلوس", price:"400 دايموند"}
   ],
   claims: [
-    {name:"cliam", ext:"jpg", desc:"100 بلوكة", price:"10 دايموند"},
-    {name:"cliam", ext:"jpg", desc:"300 بلوكة", price:"30 دايموند"},
-    {name:"cliam", ext:"jpg", desc:"400 بلوكة", price:"40 دايموند"},
-    {name:"cliam", ext:"jpg", desc:"1000 بلوكة", price:"100 دايموند"}
+    {name:"cliam", url:"ضع_رابط_صورة_claim1_هنا", desc:"100 بلوكة", price:"10 دايموند"},
+    {name:"cliam", url:"ضع_رابط_صورة_claim2_هنا", desc:"300 بلوكة", price:"30 دايموند"},
+    {name:"cliam", url:"ضع_رابط_صورة_claim3_هنا", desc:"400 بلوكة", price:"40 دايموند"},
+    {name:"cliam", url:"ضع_رابط_صورة_claim4_هنا", desc:"1000 بلوكة", price:"100 دايموند"}
   ],
   chests: [
-    {name:"chastes", ext:"jpg", desc:"صندوق ذو مزايا عشوائية", price:"500 دايموند"} 
+    {name:"chastes", url:"ضع_رابط_صورة_chest_هنا", desc:"صندوق ذو مزايا عشوائية", price:"500 دايموند"} 
   ]
 };
 
@@ -42,7 +42,7 @@ function showProductDetailsPage(item, category) {
     backButton.onclick = () => showCategory(category);
     
     const largeImg = document.createElement("img");
-    largeImg.src = `images/${item.name}.${item.ext}`;
+    largeImg.src = item.url;
     largeImg.alt = item.name;
     largeImg.style.maxWidth = '100%';
     largeImg.style.maxHeight = '400px';
@@ -80,7 +80,7 @@ function createProductCard(item, category) {
     card.className = `product-card ${category}`; 
 
     const img = document.createElement("img");
-    img.src = `images/${item.name}.${item.ext}`;
+    img.src = item.url;
     img.alt = item.name;
     img.loading = "lazy"; 
 
